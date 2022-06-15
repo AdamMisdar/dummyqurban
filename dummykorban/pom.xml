@@ -4,14 +4,33 @@
   <artifactId>dummykorban</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  
+  <dependencies>
+  		<dependency>
+  			<groupId>javax.servlet</groupId>
+  			<artifactId>javax.servlet-api</artifactId>
+  			 <version>4.0.1</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.postgresql</groupId>
+  			<artifactId>postgresql</artifactId>
+  			 <version>42.4.0</version>
+  		
+  		</dependency>
+  </dependencies>
+  
+ 
   <build>
   
     <plugins>
       <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
         <configuration>
           <release>17</release>
+          <source>1.7</source>
+          <target>1.7</target>
         </configuration>
       </plugin>
       <plugin>
@@ -28,6 +47,7 @@
       <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
+            <version>3.3.0</version>
             <executions>
                 <execution>
                     <phase>package</phase>
@@ -40,6 +60,10 @@
                                 <version>9.0.52.1</version>
                                 <destFileName>webapp-runner.jar</destFileName>
                             </artifactItem>
+                            <groupId>com.github.jsimone</groupId>
+                                <artifactId>webapp-runner</artifactId>
+                                <version>9.0.27.1</version>
+                                <destFileName>webapp-runner.jar</destFileName>
                         </artifactItems>
                     </configuration>
                 </execution>
